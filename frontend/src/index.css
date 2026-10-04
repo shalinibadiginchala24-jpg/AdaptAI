@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── AdaptAI Design Tokens ─────────────────────────────────────── */
+    --bg:        #0B0F14;
+    --surface:   #111820;
+    --card:      #151D26;
+    --border:    #26313D;
+
+    --primary:   #7C5CFC;
+    --primary-h: #8B70FF;
+
+    --success:   #35C98B;
+    --warning:   #F5B942;
+    --error:     #F05D6C;
+
+    --text:      #F5F7FA;
+    --text-2:    #9AA6B2;
+    --text-3:    #66727F;
+
+    /* shadcn/ui compatible tokens */
+    --background: 215 26% 6%;
+    --foreground: 210 33% 97%;
+
+    --card-bg: 213 28% 12%;
+    --card-foreground: 210 33% 97%;
+
+    --popover: 213 28% 12%;
+    --popover-foreground: 210 33% 97%;
+
+    --primary-hsl: 257 96% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 24% 16%;
+    --secondary-foreground: 210 33% 97%;
+
+    --muted: 213 24% 16%;
+    --muted-foreground: 210 12% 56%;
+
+    --accent: 213 24% 16%;
+    --accent-foreground: 210 33% 97%;
+
+    --destructive: 354 83% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border-hsl: 207 22% 20%;
+    --input: 207 22% 20%;
+    --ring: 257 96% 68%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, kbd, samp, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  /* ── Scrollbar ─────────────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+  /* ── Selection ─────────────────────────────────────────────────────── */
+  ::selection {
+    background-color: rgba(124, 92, 252, 0.25);
+    color: var(--text);
+  }
+}
+
+@layer utilities {
+  /* ── AdaptAI semantic color classes ───────────────────────────────── */
+  .bg-app       { background-color: var(--bg); }
+  .bg-surface   { background-color: var(--surface); }
+  .bg-card-app  { background-color: var(--card); }
+  .border-app   { border-color: var(--border); }
+
+  .text-primary-ai { color: var(--primary); }
+  .text-secondary-ai { color: var(--text-2); }
+  .text-muted-ai { color: var(--text-3); }
+
+  .text-success { color: var(--success); }
+  .text-warning { color: var(--warning); }
+  .text-error   { color: var(--error); }
+
+  .bg-primary-ai { background-color: var(--primary); }
+  .bg-success    { background-color: var(--success); }
+  .bg-warning    { background-color: var(--warning); }
+  .bg-error      { background-color: var(--error); }
+}
